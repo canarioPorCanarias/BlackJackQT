@@ -8,11 +8,15 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    login log;
-    log.setModal(true);
-    log.exec();
+//    login log;
+//    log.setModal(true);
+//    log.exec();
     ui->label_name->setText("Name: "+name);
     ui->label_money->setText("Money: " + money);
+    //QMainWindow::showFullScreen();
+    //full screen
+    QPixmap ace(":/deck/deck/AC.png");
+
 
 }
 

@@ -13,12 +13,15 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhDigitsOnly|Qt::ImhNoEditMenu|Qt::ImhNoTextHandles</set>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>150</x>
      <y>0</y>
-     <width>111</width>
+     <width>71</width>
      <height>41</height>
     </rect>
    </property>
@@ -36,8 +39,8 @@
     <rect>
      <x>220</x>
      <y>80</y>
-     <width>161</width>
-     <height>121</height>
+     <width>153</width>
+     <height>133</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -46,65 +49,35 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_login_name">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nombre</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_login_money">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Dinero</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>90</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="name_input">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>10</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="money_input">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>50</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_login_name">
+      <property name="text">
+       <string>Nombre:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="name_input"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_login_money">
+      <property name="text">
+       <string>Dinero: </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="money_input"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
