@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="table_image">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -39,8 +39,8 @@
    <widget class="QPushButton" name="shows">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>460</y>
+      <x>60</x>
+      <y>440</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -52,8 +52,8 @@
    <widget class="QFrame" name="frame2">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>230</y>
+      <x>290</x>
+      <y>220</y>
       <width>351</width>
       <height>80</height>
      </rect>
@@ -104,6 +104,37 @@
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_name">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_money">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Money: </string>
+    </property>
+   </widget>
+   <zorder>table_image</zorder>
+   <zorder>frame2</zorder>
+   <zorder>shows</zorder>
+   <zorder>label_name</zorder>
+   <zorder>label_money</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
