@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "login.h"
-#include <string>
+#include "deck.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,18 +16,32 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_money->setText("Money: " + money);
     //QMainWindow::showFullScreen();
     //full screen
-    QPixmap ace(":/deck/deck/AC.png");
+}
 
+
+
+void MainWindow::give_d_card(){
+    deck newdeck;
+    std::string route=":/deck/";
+    std::string card = newdeck.card();
+    route+=card;
+    QPixmap pix(route.c_str());
+    //ui->hand1_d->setText(route.c_str());
+    ui->hand1_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
+    QPixmap Reverse(":/deck/gray_back.png");
+    ui->hand2_d->setPixmap(Reverse.scaled(100,100,Qt::KeepAspectRatio));
 
 }
 
+
+
 void MainWindow::on_shows_clicked()
 {
- if(ui->frame2->isHidden()){
-     ui->frame2->show();
- }else{
-     ui->frame2->hide();
- }
+
+    give_d_card();
+
+
+
 
 }
 

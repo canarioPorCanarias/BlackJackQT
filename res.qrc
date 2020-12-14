@@ -2,7 +2,16 @@
     <qresource prefix="/res">
         <file>res/table.jpg</file>
     </qresource>
-    <qresource prefix="/deck">
+    <qresource prefix="/deck"/>
+    <qresource prefix="/">
+        <file>deck/10C.png</file>
+        <file>deck/10D.png</file>
+        <file>deck/10H.png</file>
+        <file>deck/10S.png</file>
+        <file>deck/1C.png</file>
+        <file>deck/1D.png</file>
+        <file>deck/1H.png</file>
+        <file>deck/1S.png</file>
         <file>deck/2C.png</file>
         <file>deck/2D.png</file>
         <file>deck/2H.png</file>
@@ -35,15 +44,7 @@
         <file>deck/9D.png</file>
         <file>deck/9H.png</file>
         <file>deck/9S.png</file>
-        <file>deck/10C.png</file>
-        <file>deck/10D.png</file>
-        <file>deck/10H.png</file>
-        <file>deck/10S.png</file>
-        <file>deck/AC.png</file>
         <file>deck/aces.png</file>
-        <file>deck/AD.png</file>
-        <file>deck/AH.png</file>
-        <file>deck/AS.png</file>
         <file>deck/back_cards-07.png</file>
         <file>deck/blue_back.png</file>
         <file>deck/gray_back.png</file>

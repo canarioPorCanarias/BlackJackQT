@@ -7,41 +7,50 @@ deck::deck()
     srand(time(NULL));
 }
 
-
-std::string deck::card(){
-    int num = rand() % 13 + 1;
-    int form=rand()%4+1;
-    std::string type;
-    if(num <= 10){
-    switch (form) {
+std::vector<std::vector<int>> vect = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}};
+std::string deck::card()
+{
+    srand(time(NULL));
+    int typeofcard = rand() % 4 + 1;
+    int numofcard = rand() % 13 + 1;
+    std::string tipo;
+    std::string total;
+    switch (typeofcard)
+    {
     case 1:
-        type="C";
+        tipo = "C";
         break;
     case 2:
-        type="D";
+        tipo = "D";
         break;
     case 3:
-        type="H";
+        tipo = "H";
         break;
     case 4:
-       type="S";
+        tipo = "S";
         break;
     }
-    std::string final =  std::to_string(num) + type;
-    }else{
-        int form=rand()%3+1;
-        switch (form) {
-        case 1:
-            type="J";
+    //std::cout << vect[typeofcard][numofcard];
+    if(numofcard>=11){
+        std::string grande;
+        switch (numofcard) {
+        case 11:
+            grande="J";
             break;
-        case 2:
-            type="Q";
+        case 12:
+            grande="Q";
             break;
-        case 3:
-            type="K";
+        case 13:
+            grande="K";
             break;
         }
+
+        return grande + tipo + ".png";
+    }else{
+    return std::to_string(numofcard) + tipo + ".png";
     }
 
-    return "";
-}
+};
