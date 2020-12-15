@@ -11,6 +11,7 @@ CONFIG += c++11
 
 SOURCES += \
     deck.cpp \
+    hands.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp

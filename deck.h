@@ -13,6 +13,8 @@ public:
     std::string card();
     std::string give_card();
 
+
+
 };
 
 #endif // DECK_H

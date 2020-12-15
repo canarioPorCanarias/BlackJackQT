@@ -14,13 +14,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    std::vector<int>dhand;
-    std::vector<int>dhandbj;
-    std::vector<int>phand;
-    std::vector<int>phandbj;
+
+
 private slots:
     void on_shows_clicked();
-    void give_d_card();
+    void give_d_card(int i);
 
 
 

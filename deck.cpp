@@ -1,21 +1,35 @@
 #include "deck.h"
-
+#include <chrono>
+#include <thread>
 
 
 deck::deck()
 {
-    srand(time(NULL));
+srand(time(0));
 }
 
-std::vector<std::vector<int>> vect = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
-                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
-                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
-                                      {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}};
+//std::vector<std::vector<int>> newdeck(){
+//    std::vector<std::vector<int>> vect = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+//                                          {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+//                                          {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+//                                          {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}};
+//    return vect;
+//}
+
 std::string deck::card()
 {
-    srand(time(NULL));
-    int typeofcard = rand() % 4 + 1;
-    int numofcard = rand() % 13 + 1;
+    std::vector<std::vector<int>> vect = {{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                             {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                             {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13},
+                                             {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}};
+    int typeofcard = rand() % 4;
+    int numofcard = rand() % vect[typeofcard].size();
+    vect[typeofcard].erase(vect[typeofcard].begin()+numofcard);
+    numofcard+=1;
+    typeofcard+=1;
+//    while(numofcard!=vect[typeofcard][numofcard]){
+//
+//    }
     std::string tipo;
     std::string total;
     switch (typeofcard)
@@ -48,8 +62,12 @@ std::string deck::card()
             break;
         }
 
+
+
         return grande + tipo + ".png";
+
     }else{
+
     return std::to_string(numofcard) + tipo + ".png";
     }
 
