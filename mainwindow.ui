@@ -107,6 +107,9 @@
     </property>
    </widget>
    <widget class="QFrame" name="frame2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -121,7 +124,7 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="Bdouble">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -131,10 +134,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>1</string>
+      <string>DOUBLE</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="Bhit">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -144,10 +147,10 @@
       </rect>
      </property>
      <property name="text">
-      <string>2</string>
+      <string>HIT</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="Bstand">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -157,7 +160,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>3</string>
+      <string>STAND</string>
      </property>
     </widget>
    </widget>
@@ -192,11 +195,18 @@
      <rect>
       <x>390</x>
       <y>10</y>
-      <width>251</width>
+      <width>301</width>
       <height>91</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="3">
+      <widget class="QLabel" name="hand3_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="4">
       <widget class="QLabel" name="hand4_d">
        <property name="text">
@@ -218,8 +228,8 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="3">
-      <widget class="QLabel" name="hand3_d">
+     <item row="1" column="5">
+      <widget class="QLabel" name="hand5_d">
        <property name="text">
         <string/>
        </property>
@@ -304,19 +314,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="hand_value">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>450</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <zorder>table_image</zorder>
    <zorder>frame2</zorder>
    <zorder>shows</zorder>
@@ -327,7 +324,6 @@
    <zorder>player_num</zorder>
    <zorder>gridLayoutWidget_2</zorder>
    <zorder>gridLayoutWidget_3</zorder>
-   <zorder>hand_value</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
