@@ -16,7 +16,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     deck newdeck;
-
+    void newgamestart();
 private slots:
     void on_shows_clicked();
     void start_round();

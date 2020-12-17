@@ -25,5 +25,3 @@ extern QString name;
 extern QString money;
 
 #endif // LOGIN_H
-extern QString name;
-extern QString money;

@@ -27,6 +27,26 @@ MainWindow::MainWindow(QWidget *parent)
     //full screen
 
 }
+void MainWindow::newgamestart(){
+    ui->frame2->hide();
+    dhand.clear();
+    phand.clear();
+    ui->hand1_p->clear();
+    ui->hand2_p->clear();
+    ui->hand3_p->clear();
+    ui->hand4_p->clear();
+    ui->hand5_p->clear();
+    ui->hand6_p->clear();
+    ui->hand1_d->clear();
+    ui->hand2_d->clear();
+    ui->hand3_d->clear();
+    ui->hand4_d->clear();
+    ui->hand5_d->clear();
+    ui->hand6_d->clear();
+    ui->player_num->hide();
+    ui->player_num->hide();
+    ui->shows->show();
+};
 
 int sum(std::vector<int> const &vec)
     {
@@ -48,7 +68,6 @@ bool is_number(std::string value)
 }
 
 int getvalue(std::string card){
-
         int value;
         card.erase(0,7);
         card.erase(card.length()-4);
@@ -61,18 +80,26 @@ int getvalue(std::string card){
 }
 
 void MainWindow::start_round(){
-    extern std::vector<int> dhand;
-    extern std::vector<int> phand;
+//    extern std::vector<int> dhand;
+//    extern std::vector<int> phand;
     ui->frame2->hide();
     ui->shows->hide();
+    ui->player_num->show();
+    ui->player_num->show();
+    //dealer second hand
+    std::string dcard2 = newdeck.card();
+    dhand.push_back(getvalue(":/deck/"+dcard2));
+    QPixmap dhand2((":/deck/"+dcard2).c_str());
+    ui->hand2_d->setPixmap(dhand2.scaled(100,100,Qt::KeepAspectRatio));
+    ui->hand2_d->hide();
     std::string dcard = newdeck.card();
     QPixmap pix((":/deck/"+dcard).c_str());
     dhand.push_back(getvalue(":/deck/"+dcard));
     ui->hand1_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-    QPixmap pix2((":/deck/"+dcard).c_str());
-    //ui->hand2_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-    QPixmap Reverse(":/deck/gray_back.png");
-    ui->hand2_d->setPixmap(Reverse.scaled(100,100,Qt::KeepAspectRatio));
+//    QPixmap pix2((":/deck/"+dcard).c_str());
+//    ui->hand2_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
+//    QPixmap Reverse(":/deck/gray_back.png");
+//    ui->hand2_d->setPixmap(Reverse.scaled(100,100,Qt::KeepAspectRatio));
     ui->dealer_num->setText(std::to_string(dhand[0]).c_str());
     std::string pcard = newdeck.card();
     pcard=newdeck.card();
@@ -88,10 +115,12 @@ void MainWindow::start_round(){
         QMessageBox::information(this,tr("YOU WIN"),tr("Congratulations"));
     }else if(sum(phand)==21 && sum(dhand)==21){
         QMessageBox::information(this,tr("TIE"),tr("PUSH BACK"));
+    }else if((phand[0]==1 && phand[1]==10) || (phand[1]==1 && phand[0]==10)){
+         QMessageBox::information(this,tr("Blackjack"),tr("You won"));
     }
 
 
-    delay(3000);
+    //delay(3000);
     //qDebug() << "first" << ui->hand1_p->pixmap(Qt::ReturnByValue) << "SECOND " << ui->hand4_p->pixmap(Qt::ReturnByValue);
 
 }
@@ -117,7 +146,7 @@ void MainWindow::on_Bhit_clicked()
 {
     ui->shows->hide();
     ui->frame2->hide();
-    delay(1000);
+    //delay(1000);
     std::string newcard = newdeck.card();
     QPixmap pixnewcard((":/deck/"+newcard).c_str());
     phand.push_back(getvalue(":/deck/"+newcard));
@@ -127,10 +156,16 @@ void MainWindow::on_Bhit_clicked()
     }else if((ui->hand4_p->pixmap(Qt::ReturnByValue).isNull())){
         ui->hand4_p->setPixmap(pixnewcard.scaled(100,100,Qt::KeepAspectRatio));
     }
-    delay(1000);
+    //delay(1000);
     if(sum(phand)>21){
         QMessageBox::information(this,tr("Busted you passed"),tr("good luck next time"));
-    }else{
+        newgamestart();
+
+    }else if(sum(phand)==21){
+        QMessageBox::information(this,tr("Black Jack"),tr("You win"));
+        newgamestart();
+    }
+    else{
     ui->frame2->show();
     }
 
@@ -140,15 +175,14 @@ void MainWindow::on_Bstand_clicked()
 {
     ui->shows->hide();
     ui->frame2->hide();
-    std::string dcard2 = newdeck.card();
-    dhand.push_back(getvalue(":/deck/"+dcard2));
-    QPixmap dhand2((":/deck/"+dcard2).c_str());
-    ui->hand2_d->setPixmap(dhand2.scaled(100,100,Qt::KeepAspectRatio));
+
+    ui->hand2_d->show();
     ui->dealer_num->setText(std::to_string(sum(dhand)).c_str());
     if(sum(dhand)==16 && sum(phand)==16){
         QMessageBox::information(this,tr("Tie"),tr("money pushed"));
     }
-    while(sum(dhand)<=17){
+    if(sum(dhand)<17){
+    while(true){
         if(ui->hand3_d->pixmap(Qt::ReturnByValue).isNull()){
             std::string more = newdeck.card();
             dhand.push_back(getvalue(":/deck/"+more));
@@ -167,7 +201,16 @@ void MainWindow::on_Bstand_clicked()
             QPixmap hand5((":/deck/"+more).c_str());
              ui->hand5_d->setPixmap(hand5.scaled(100,100,Qt::KeepAspectRatio));
             ui->dealer_num->setText(std::to_string(sum(dhand)).c_str());
+        }else if(ui->hand6_d->pixmap(Qt::ReturnByValue).isNull()){
+            std::string more = newdeck.card();
+            dhand.push_back(getvalue(":/deck/"+more));
+            QPixmap hand5((":/deck/"+more).c_str());
+             ui->hand6_d->setPixmap(hand5.scaled(100,100,Qt::KeepAspectRatio));
+            ui->dealer_num->setText(std::to_string(sum(dhand)).c_str());
         }
+//        if(sum(dhand)<=17 && sum(phand)<21 && sum(dhand)<sum(phand)){
+//            QMessageBox::information(this,tr("You have higher cards"),tr("good job"));
+//        }
         if(sum(dhand)>=22){
             QMessageBox::information(this,tr("dealer bust you win"),tr("good job"));
             break;
@@ -176,7 +219,16 @@ void MainWindow::on_Bstand_clicked()
             break;
         }else if(sum(dhand)==sum(phand)){
             QMessageBox::information(this,tr("Tie"),tr("money pushed"));
+            break;
         }
     }
-
+    }
+    else if(sum(dhand) > sum(phand) && sum(phand)<21){
+        QMessageBox::information(this,tr("dealer wins"),tr("dealer have higher value"));
+    }else if(sum(phand) > sum(dhand)){
+        QMessageBox::information(this,tr("You wins"),tr("congratulations"));
+    }else if (sum(phand) == sum(dhand)){
+        QMessageBox::information(this,tr("Tie"),tr("money pushed"));
+    }
+newgamestart();
 }
