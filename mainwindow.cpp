@@ -49,14 +49,58 @@ void MainWindow::newgamestart(){
 };
 
 int sum(std::vector<int> const &vec)
+{
+    int total = 0;
+    int jack = 0;
+    for (int i = 0; i < (int) vec.size(); i++)
     {
-        int total = 0;
-        for (int i = 0; i < (int) vec.size(); i++)
+
+        if (vec.at(i) == 1)
+        {
+            jack += 1;
+        }
+        else
         {
             total += vec.at(i);
         }
-        return total;
+    }
+
+    if (jack && (total <= (11 - jack)))
+    {
+        total += 10 + jack;
+    }
+    else if (jack >= 1)
+    {
+        total += jack;
+    }
+    // if (jack == 1 && (total <= 10))
+    // {
+    //     total += 11;
+    // }
+    // else if (jack == 1)
+    // {
+    //     total += 1;
+    // }
+    // if (jack == 2 && (total <= 9))
+    // {
+    //     total += 12;
+    // }
+    // else if (jack == 2)
+    // {
+    //     total += 2;
+    // }
+    // if (jack == 3 && (total <= 8))
+    // {
+    //     total += 13;
+    // }
+    // else if (jack == 3)
+    // {
+    //     total += 3;
+    // }
+
+    return total;
 }
+
 bool is_number(std::string value)
 {
     char num=(char) value[0];
@@ -113,10 +157,13 @@ void MainWindow::start_round(){
     ui->player_num->setText(std::to_string(sum(phand)).c_str());
     if(sum(phand)==21 && sum(dhand) !=21){
         QMessageBox::information(this,tr("YOU WIN"),tr("Congratulations"));
+        newgamestart();
     }else if(sum(phand)==21 && sum(dhand)==21){
         QMessageBox::information(this,tr("TIE"),tr("PUSH BACK"));
+        newgamestart();
     }else if((phand[0]==1 && phand[1]==10) || (phand[1]==1 && phand[0]==10)){
          QMessageBox::information(this,tr("Blackjack"),tr("You won"));
+         newgamestart();
     }
 
 
