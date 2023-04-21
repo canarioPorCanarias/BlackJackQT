@@ -1,6 +1,7 @@
-#BlackJack
+# BlackJack
+Blackjack game made with qt framework 
 
-### todo
+## todo
 
  save users
  implement bets
