@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "login.h"
 #include "deck.h"
-#include "hands.cpp"
+#include "hands.h"
 
 void delay( int millisecondsToWait )
 {
@@ -17,14 +17,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    login log;
-//    log.setModal(true);
-//    log.exec();
+   login log;
+   log.setModal(true);
+   log.exec();
     ui->label_name->setText("Name: "+name);
-    ui->label_money->setText("Money: " + money);
+    ui->label_money->setText("Money: " + money + " $");
     ui->frame2->hide();
-    //QMainWindow::showFullScreen();
+
     //full screen
+    //QMainWindow::showFullScreen();
+
 
 }
 void MainWindow::newgamestart(){
@@ -44,7 +46,7 @@ void MainWindow::newgamestart(){
     ui->hand5_d->clear();
     ui->hand6_d->clear();
     ui->player_num->hide();
-    ui->player_num->hide();
+    ui->dealer_num->hide();
     ui->shows->show();
 };
 
@@ -73,30 +75,6 @@ int sum(std::vector<int> const &vec)
     {
         total += jack;
     }
-    // if (jack == 1 && (total <= 10))
-    // {
-    //     total += 11;
-    // }
-    // else if (jack == 1)
-    // {
-    //     total += 1;
-    // }
-    // if (jack == 2 && (total <= 9))
-    // {
-    //     total += 12;
-    // }
-    // else if (jack == 2)
-    // {
-    //     total += 2;
-    // }
-    // if (jack == 3 && (total <= 8))
-    // {
-    //     total += 13;
-    // }
-    // else if (jack == 3)
-    // {
-    //     total += 3;
-    // }
 
     return total;
 }
@@ -124,12 +102,10 @@ int getvalue(std::string card){
 }
 
 void MainWindow::start_round(){
-//    extern std::vector<int> dhand;
-//    extern std::vector<int> phand;
     ui->frame2->hide();
     ui->shows->hide();
     ui->player_num->show();
-    ui->player_num->show();
+    ui->dealer_num->show();
     //dealer second hand
     std::string dcard2 = newdeck.card();
     dhand.push_back(getvalue(":/deck/"+dcard2));
@@ -140,10 +116,6 @@ void MainWindow::start_round(){
     QPixmap pix((":/deck/"+dcard).c_str());
     dhand.push_back(getvalue(":/deck/"+dcard));
     ui->hand1_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-//    QPixmap pix2((":/deck/"+dcard).c_str());
-//    ui->hand2_d->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
-//    QPixmap Reverse(":/deck/gray_back.png");
-//    ui->hand2_d->setPixmap(Reverse.scaled(100,100,Qt::KeepAspectRatio));
     ui->dealer_num->setText(std::to_string(dhand[0]).c_str());
     std::string pcard = newdeck.card();
     pcard=newdeck.card();
@@ -165,10 +137,6 @@ void MainWindow::start_round(){
          QMessageBox::information(this,tr("Blackjack"),tr("You won"));
          newgamestart();
     }
-
-
-    //delay(3000);
-    //qDebug() << "first" << ui->hand1_p->pixmap(Qt::ReturnByValue) << "SECOND " << ui->hand4_p->pixmap(Qt::ReturnByValue);
 
 }
 
@@ -193,7 +161,7 @@ void MainWindow::on_Bhit_clicked()
 {
     ui->shows->hide();
     ui->frame2->hide();
-    //delay(1000);
+    delay(1000);
     std::string newcard = newdeck.card();
     QPixmap pixnewcard((":/deck/"+newcard).c_str());
     phand.push_back(getvalue(":/deck/"+newcard));
@@ -203,7 +171,7 @@ void MainWindow::on_Bhit_clicked()
     }else if((ui->hand4_p->pixmap(Qt::ReturnByValue).isNull())){
         ui->hand4_p->setPixmap(pixnewcard.scaled(100,100,Qt::KeepAspectRatio));
     }
-    //delay(1000);
+    delay(1000);
     if(sum(phand)>21){
         QMessageBox::information(this,tr("Busted you passed"),tr("good luck next time"));
         newgamestart();
@@ -230,7 +198,7 @@ void MainWindow::on_Bstand_clicked()
     }
     if(sum(dhand)<17){
     while(true){
-        if(ui->hand3_d->pixmap(Qt::ReturnByValue).isNull()){
+            if(ui->hand3_d->pixmap(Qt::ReturnByValue).isNull()){
             std::string more = newdeck.card();
             dhand.push_back(getvalue(":/deck/"+more));
             QPixmap hand3((":/deck/"+more).c_str());
@@ -255,9 +223,9 @@ void MainWindow::on_Bstand_clicked()
              ui->hand6_d->setPixmap(hand5.scaled(100,100,Qt::KeepAspectRatio));
             ui->dealer_num->setText(std::to_string(sum(dhand)).c_str());
         }
-//        if(sum(dhand)<=17 && sum(phand)<21 && sum(dhand)<sum(phand)){
-//            QMessageBox::information(this,tr("You have higher cards"),tr("good job"));
-//        }
+        if(sum(dhand)<=17 && sum(phand)<21 && sum(dhand)<sum(phand)){
+            QMessageBox::information(this,tr("You have higher cards"),tr("good job"));
+        }
         if(sum(dhand)>=22){
             QMessageBox::information(this,tr("dealer bust you win"),tr("good job"));
             break;

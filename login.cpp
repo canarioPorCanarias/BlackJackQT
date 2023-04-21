@@ -17,7 +17,7 @@ QString money;
 void login::on_pushButton_clicked()
 {
     name=ui->name_input->text();
-    money=ui->money_input->text();
+    money = "100";
     close();
 }
 
