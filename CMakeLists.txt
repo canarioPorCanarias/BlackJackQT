@@ -61,6 +61,7 @@ set_target_properties(untitled PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 
 install(TARGETS untitled
     BUNDLE DESTINATION .
