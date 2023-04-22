@@ -5,7 +5,6 @@
 #include <QObject>
 #include <QWidget>
 
-
 class deck
 {
 public:
@@ -16,8 +15,7 @@ public:
 
 #endif // DECK_H
 
-#include <stdio.h>      /* printf, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdio.h>  /* printf, NULL */
+#include <stdlib.h> /* srand, rand */
+#include <time.h>   /* time */
 #include <vector>
-

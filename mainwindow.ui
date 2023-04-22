@@ -1,363 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>MainWindow</class>
-    <widget class="QMainWindow" name="MainWindow">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>971</width>
-                <height>500</height>
-            </rect>
-        </property>
-        <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-            </sizepolicy>
-        </property>
-        <property name="minimumSize">
-            <size>
-                <width>971</width>
-                <height>500</height>
-            </size>
-        </property>
-        <property name="maximumSize">
-            <size>
-                <width>973</width>
-                <height>500</height>
-            </size>
-        </property>
-        <property name="baseSize">
-            <size>
-                <width>1000</width>
-                <height>479</height>
-            </size>
-        </property>
-        <property name="windowTitle">
-            <string>BlackJack</string>
-        </property>
-        <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonIconOnly</enum>
-        </property>
-        <property name="animated">
-            <bool>true</bool>
-        </property>
-        <property name="documentMode">
-            <bool>false</bool>
-        </property>
-        <property name="tabShape">
-            <enum>QTabWidget::Rounded</enum>
-        </property>
-        <property name="dockNestingEnabled">
-            <bool>false</bool>
-        </property>
-        <property name="unifiedTitleAndToolBarOnMac">
-            <bool>false</bool>
-        </property>
-        <widget class="QWidget" name="centralwidget">
-            <property name="styleSheet">
-                <string notr="true" />
-            </property>
-            <widget class="QLabel" name="table_image">
-                <property name="enabled">
-                    <bool>true</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>971</width>
-                        <height>551</height>
-                    </rect>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="styleSheet">
-                    <string notr="true" />
-                </property>
-                <property name="text">
-                    <string />
-                </property>
-                <property name="pixmap">
-                    <pixmap resource="res.qrc">:/res/res/table.jpg</pixmap>
-                </property>
-                <property name="scaledContents">
-                    <bool>true</bool>
-                </property>
-                <property name="wordWrap">
-                    <bool>false</bool>
-                </property>
-            </widget>
-            <widget class="QPushButton" name="shows">
-                <property name="geometry">
-                    <rect>
-                        <x>60</x>
-                        <y>440</y>
-                        <width>75</width>
-                        <height>23</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>PLAY</string>
-                </property>
-            </widget>
-            <widget class="QFrame" name="frame2">
-                <property name="enabled">
-                    <bool>true</bool>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>320</x>
-                        <y>270</y>
-                        <width>351</width>
-                        <height>80</height>
-                    </rect>
-                </property>
-                <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QPushButton" name="Bdouble">
-                    <property name="geometry">
-                        <rect>
-                            <x>40</x>
-                            <y>30</y>
-                            <width>75</width>
-                            <height>23</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>DOUBLE</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" name="Bhit">
-                    <property name="geometry">
-                        <rect>
-                            <x>150</x>
-                            <y>30</y>
-                            <width>75</width>
-                            <height>23</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>HIT</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" name="Bstand">
-                    <property name="geometry">
-                        <rect>
-                            <x>250</x>
-                            <y>30</y>
-                            <width>75</width>
-                            <height>23</height>
-                        </rect>
-                    </property>
-                    <property name="text">
-                        <string>STAND</string>
-                    </property>
-                </widget>
-            </widget>
-            <widget class="QLabel" name="label_name">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>20</y>
-                        <width>111</width>
-                        <height>31</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Name: </string>
-                </property>
-            </widget>
-            <widget class="QLabel" name="label_money">
-                <property name="geometry">
-                    <rect>
-                        <x>10</x>
-                        <y>50</y>
-                        <width>151</width>
-                        <height>31</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string>Money: </string>
-                </property>
-            </widget>
-            <widget class="QWidget" name="gridLayoutWidget">
-                <property name="geometry">
-                    <rect>
-                        <x>390</x>
-                        <y>10</y>
-                        <width>341</width>
-                        <height>91</height>
-                    </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout">
-                    <item row="0" column="1">
-                        <widget class="QLabel" name="hand2_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="0" column="4">
-                        <widget class="QLabel" name="hand5_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="0" column="3">
-                        <widget class="QLabel" name="hand4_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="0" column="2">
-                        <widget class="QLabel" name="hand3_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="0" column="5">
-                        <widget class="QLabel" name="hand6_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="0" column="0">
-                        <widget class="QLabel" name="hand1_d">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                </layout>
-            </widget>
-            <widget class="QLabel" name="dealer_num">
-                <property name="geometry">
-                    <rect>
-                        <x>470</x>
-                        <y>170</y>
-                        <width>51</width>
-                        <height>31</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string />
-                </property>
-            </widget>
-            <widget class="QLabel" name="player_num">
-                <property name="geometry">
-                    <rect>
-                        <x>460</x>
-                        <y>450</y>
-                        <width>61</width>
-                        <height>21</height>
-                    </rect>
-                </property>
-                <property name="text">
-                    <string />
-                </property>
-            </widget>
-            <widget class="QWidget" name="gridLayoutWidget_2">
-                <property name="geometry">
-                    <rect>
-                        <x>350</x>
-                        <y>330</y>
-                        <width>2</width>
-                        <height>2</height>
-                    </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_2" />
-            </widget>
-            <widget class="QWidget" name="gridLayoutWidget_3">
-                <property name="geometry">
-                    <rect>
-                        <x>400</x>
-                        <y>340</y>
-                        <width>321</width>
-                        <height>91</height>
-                    </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_3">
-                    <item row="1" column="0">
-                        <widget class="QLabel" name="hand1_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="1" column="1">
-                        <widget class="QLabel" name="hand2_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="1" column="4">
-                        <widget class="QLabel" name="hand4_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="1" column="3">
-                        <widget class="QLabel" name="hand3_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="1" column="5">
-                        <widget class="QLabel" name="hand5_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                    <item row="1" column="6">
-                        <widget class="QLabel" name="hand6_p">
-                            <property name="text">
-                                <string />
-                            </property>
-                        </widget>
-                    </item>
-                </layout>
-            </widget>
-            <zorder>table_image</zorder>
-            <zorder>frame2</zorder>
-            <zorder>shows</zorder>
-            <zorder>label_name</zorder>
-            <zorder>label_money</zorder>
-            <zorder>gridLayoutWidget</zorder>
-            <zorder>dealer_num</zorder>
-            <zorder>player_num</zorder>
-            <zorder>gridLayoutWidget_2</zorder>
-            <zorder>gridLayoutWidget_3</zorder>
-        </widget>
-        <widget class="QMenuBar" name="menubar">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>971</width>
-                    <height>21</height>
-                </rect>
-            </property>
-        </widget>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>971</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>971</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>973</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>1000</width>
+    <height>479</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>BlackJack</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QLabel" name="table_image">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>971</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="MainWindow.qrc">:/res/res/table.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="shows">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>440</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PLAY</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame2">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>270</y>
+      <width>351</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="Bdouble">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DOUBLE</string>
+     </property>
     </widget>
-    <resources>
-        <include location="res.qrc" />
-    </resources>
-    <connections />
+    <widget class="QPushButton" name="Bhit">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>30</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>HIT</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Bstand">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>30</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>STAND</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_name">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name: </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_money">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Money: </string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>10</y>
+      <width>341</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="hand2_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="hand5_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="hand4_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="hand3_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="hand6_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="hand1_d">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="dealer_num">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>170</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="player_num">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>450</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>330</y>
+      <width>2</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2"/>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>340</y>
+      <width>321</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0">
+      <widget class="QLabel" name="hand1_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="hand2_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="hand4_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="hand3_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLabel" name="hand5_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLabel" name="hand6_p">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_status" native="true">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>150</y>
+      <width>211</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="frame_status_label_title">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>10</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>TITLE</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::NoTextInteraction</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="frame_status_label_body">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>171</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>BODY</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+    </widget>
+   </widget>
+   <zorder>table_image</zorder>
+   <zorder>frame2</zorder>
+   <zorder>shows</zorder>
+   <zorder>label_name</zorder>
+   <zorder>label_money</zorder>
+   <zorder>gridLayoutWidget</zorder>
+   <zorder>dealer_num</zorder>
+   <zorder>player_num</zorder>
+   <zorder>gridLayoutWidget_2</zorder>
+   <zorder>gridLayoutWidget_3</zorder>
+   <zorder>widget_status</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>971</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
 </ui>

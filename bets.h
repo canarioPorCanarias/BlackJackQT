@@ -5,7 +5,7 @@
 #include <QObject>
 #include <QWidget>
 
-class bets: public QObject
+class bets : public QObject
 {
     Q_OBJECT
 public:
@@ -13,6 +13,7 @@ public:
     bets();
 signals:
     void updateBet(int value);
+
 private:
     int bet;
 };

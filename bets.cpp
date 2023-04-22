@@ -2,10 +2,10 @@
 
 bets::bets()
 {
-
 }
 
-void bets::setBet(int value){
-   int newbet=value;
+void bets::setBet(int value)
+{
+   int newbet = value;
    emit updateBet(newbet);
 }

@@ -1,9 +1,8 @@
 #include "login.h"
 #include "ui_login.h"
 
-login::login(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::login)
+login::login(QWidget *parent) : QDialog(parent),
+                                ui(new Ui::login)
 {
     ui->setupUi(this);
 }
@@ -16,9 +15,7 @@ QString name;
 QString money;
 void login::on_pushButton_clicked()
 {
-    name=ui->name_input->text();
+    name = ui->name_input->text();
     money = "100";
     close();
 }
-
-
