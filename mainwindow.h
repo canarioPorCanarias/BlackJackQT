@@ -1,3 +1,8 @@
+#pragma once
+
+#include <QtWidgets/QMainWindow>
+#include "ui_MainWindow.h"
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "deck.h"
@@ -13,7 +18,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
     deck newdeck;
     void newgamestart();
@@ -25,7 +30,7 @@ private slots:
     void on_Bstand_clicked();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 };
 #endif // MAINWINDOW_H
 #include <QPixmap>
