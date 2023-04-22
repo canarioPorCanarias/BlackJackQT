@@ -83,6 +83,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ManageUser.cpp" />
+    <ClCompile Include="settings.cpp" />
     <QtRcc Include="MainWindow.qrc" />
     <QtUic Include="login.ui" />
     <QtUic Include="MainWindow.ui" />
@@ -92,6 +94,7 @@
     <ClCompile Include="login.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="settings.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="bets.h" />
@@ -99,7 +102,11 @@
   <ItemGroup>
     <ClInclude Include="deck.h" />
     <ClInclude Include="hands.h" />
+    <QtMoc Include="settings.h" />
     <QtMoc Include="login.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\gear.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

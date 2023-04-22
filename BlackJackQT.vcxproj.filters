@@ -49,12 +49,21 @@
     <ClCompile Include="login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ManageUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="bets.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="login.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="settings.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -70,5 +79,13 @@
     <QtUic Include="login.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="settings.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\gear.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

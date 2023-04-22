@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/res">
         <file>res/table.jpg</file>
+        <file>res/gear.png</file>
     </qresource>
-    <qresource prefix="/deck" />
+    <qresource prefix="/deck"/>
     <qresource prefix="/">
         <file>deck/10C.png</file>
         <file>deck/10D.png</file>

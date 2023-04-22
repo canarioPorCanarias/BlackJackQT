@@ -5,3 +5,4 @@ Blackjack game made with qt framework
 
  save users
  implement bets
+ settings dialog

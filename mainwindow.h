@@ -6,6 +6,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "deck.h"
+#include "settings.h"
 #include <QMainWindow>
 #include <QTime>
 #include <QDebug>
@@ -32,6 +33,7 @@ private slots:
     void on_Bhit_clicked();
     void on_Bstand_clicked();
     void CustomMessageBox(QString title, QString body);
+    void on_settings_clicked();
 
 private:
     Ui::MainWindow *ui;
